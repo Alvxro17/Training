@@ -1,5 +1,6 @@
 package sesion02;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 import javax.sql.rowset.spi.SyncResolver;
@@ -11,13 +12,13 @@ public class OperacionAritmetica {
         String c;
 
         System.out.println("Elije los operandos para realizar un tipo de operacion: ");
-        System.out.println("x = ");
+        System.out.print("x = ");
         x = sc.nextDouble();
-        System.out.println("y = ");
+        System.out.print("y = ");
         y = sc.nextDouble();
-        System.out.println("Elije el tipo de operacion entre +, -, *, / : ");
+        System.out.print("Elije el tipo de operacion entre +, -, *, / : ");
         c = sc.next();
-        System.out.println("El resultado de la operacion es: "+ realizarOperacion(x, y, c));
+        System.out.printf(Locale.ENGLISH, "El resultado de la operacion %d %s %d es: %.2f", (int)x, c,(int)y, realizarOperacion(x, y, c));
 
     }
     public static double realizarOperacion(double x, double y, String c) {

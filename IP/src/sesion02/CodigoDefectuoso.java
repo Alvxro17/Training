@@ -10,22 +10,30 @@ public class CodigoDefectuoso {
         do {
             System.out.print("Escribe el codigo que quieras comprobar y escribe 0 para acabar: ");
             codigo = sc.nextInt();
-            if (esCodigoDefectuoso(codigo) == false)
+            if (codigo == 0)
+                break;
+            else if (codigo < 0)
+                codigo = -1;
+            else if (esCodigoDefectuoso(codigo) == false)
                 System.out.println("El codigo NO es defectuoso");
             else
                 System.out.println("El codigo ES defectuoso"); 
         } while (codigo < 0);
 
         while (codigo > 0) {
-            System.out.print("Codigo -> ");
-            codigo = sc.nextInt();
-            if (codigo == 0) {
-                break;
-            } else if (esCodigoDefectuoso(codigo) == false) {
-                    System.out.println("El codigo NO es defectuoso");
-            } else {
-                    System.out.println("El codigo ES defectuoso"); 
-            }
+            do {
+                System.out.print("Codigo -> ");
+                codigo = sc.nextInt();
+                if (codigo == 0) {
+                    break;
+                } else if (codigo < 0) {
+                        codigo = -1;
+                } else if (esCodigoDefectuoso(codigo) == false) {
+                            System.out.println("El codigo NO es defectuoso");
+                } else {
+                        System.out.println("El codigo ES defectuoso"); 
+                }
+            } while (codigo < 0);
         }
 
         System.out.println("Programa finalizado...");
